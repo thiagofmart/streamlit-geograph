@@ -14,6 +14,8 @@ m = leafmap.Map(center=[-15, -50], zoom=4)
 data = "https://github.com/thiagofmart/streamlit-geograph/blob/main/us_cities.csv?raw=true"
 df = pd.read_csv(data, sep=";")
 root_regions = "https://github.com/tbrugz/geodata-br/blob/master/us_cities.csv"
+df.loc[:, "latitude"] = df.loc[:, "latitude"].apply(lambda x: float(str(x).replace(",", ".")))
+df.loc[:, "longitude"] = df.loc[:, "longitude"].apply(lambda x: float(str(x).replace(",", ".")))
 regions_list = [
     ("São Paulo", "geojson/geojs-35-mun.json"),
     ("Rio de Janeiro", "geojson/geojs-33-mun.json"),
