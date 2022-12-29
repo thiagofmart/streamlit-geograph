@@ -11,8 +11,8 @@ st.title("Solar Mapa Geográfico")
 
 m = leafmap.Map(center=[-15, -50], zoom=4)
 #cities = 'https://raw.githubusercontent.com/giswqs/leafmap/master/examples/data/us_cities.csv'
-data = "https://github.com/thiagofmart/streamlit-geograph/us_cities.csv?raw=true""
-df = pd.read_csv(data, sep=";", error_bad_lines=False, engine="python")
+data = "https://github.com/thiagofmart/streamlit-geograph/blob/main/us_cities.csv?raw=true"
+df = pd.read_csv(data, sep=";")
 root_regions = "https://github.com/tbrugz/geodata-br/blob/master/us_cities.csv"
 regions_list = [
     ("São Paulo", "geojson/geojs-35-mun.json"),
